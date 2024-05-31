@@ -1,0 +1,49 @@
+﻿<Window x:Class="TechnoService2.View.AddEditRequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechnoService2.View"
+        mc:Ignorable="d"
+        Title="Техносервис - Добавить/Изменить" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.75*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Content="Оборудование"/>
+            <TextBox Text="{Binding Equipment}" Margin="10,2" FontSize="18"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Content="Тип неисправности"/>
+            <ComboBox x:Name="FaultTypeComboBox" SelectedValue="{Binding FaultTypeId}" SelectedValuePath="Id" DisplayMemberPath="FaultTitle"
+                      Margin="10,2" FontSize="16"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Content="ФИО клиента"/>
+            <TextBox Text="{Binding ClientName}" Margin="10,2" FontSize="18"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Content="Статус"/>
+            <TextBox Text="в ожидании.." FontSize="18" IsReadOnly="True" Margin="10,2"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Content="Дата подачи"/>
+            <DatePicker SelectedDate="{Binding DateAdded}" Margin="10,2" FontSize="18"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Content="Подробности ошибки"/>
+            <TextBox Text="{Binding ProblemDescription}" Height="100" Margin="5" FontSize="18" AcceptsReturn="True" AcceptsTab="True"/>
+        </StackPanel>
+        <Button Content="Сохранить" x:Name="saveButton" FontSize="18" Margin="250,10" Grid.Row="4" Grid.ColumnSpan="2" Click="saveButton_Click"/>
+    </Grid>
+</Window>

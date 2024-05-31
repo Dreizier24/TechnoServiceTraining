@@ -1,0 +1,23 @@
+﻿<Window x:Class="TechnoService2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechnoService2"
+        mc:Ignorable="d"
+        Title="Техносервис - Главная" Height="450" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Главная" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="newRequestButton" Margin="50,20" FontSize="18" Content="➕Новая заявка" Grid.Row="1" Click="newRequestButton_Click"/>
+        <Button x:Name="manageRequestsButton" Margin="50,20" FontSize="18" Content="🖊️Управление заявками" Grid.Row="2"/>
+        <Button x:Name="requestsListButton" Margin="50,20" FontSize="18" Content="📁Реестр заявок" Grid.Row="3"/>
+        <Button x:Name="userManageButton" Margin="50,20" FontSize="18" Content="👤Пользователи" Grid.Row="4"/>
+    </Grid>
+</Window>
